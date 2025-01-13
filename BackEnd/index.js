@@ -24,10 +24,11 @@ mongoose.connect(process.env.ConnetionString)
 
 let ProductSchema = new mongoose.Schema({
     name: String,
+    title:String,
     description: String,
+    country: String,
     price: Number,
-    Country: String,
-    Image: String
+    image: String
 })
 
 let ProductModel = mongoose.model("products", ProductSchema)

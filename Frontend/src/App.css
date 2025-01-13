@@ -85,6 +85,75 @@
   border: 1px solid white;
   transition: all .3s ease;
 }
+/* ------section products---------*/
+.products{
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+.product-content{
+  text-align: center;
+  margin-top: 70px;
+  width: 670px;
+  h3{
+    font-size: 32px;
+  }
+  p{
+    color: #969696;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}
+
+.card-image{
+  height: auto;
+  overflow: hidden;
+}
+.card-image:hover{
+  transform: scale(1.15);
+  transition: all .1s ease-out;
+} 
+.a{
+  overflow: hidden;
+}
+.country-btn{
+  background-color: rgb(27, 27, 27);
+  color: white;
+  padding: 10px 15px;
+  border:  none;
+  font-size: 14px;
+}
+.card-btn-detail{
+  background-color:blue ;
+  border: none;
+  padding: 6px 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+.card-btn-delete{
+  background-color:red ;
+  border: none;
+  padding: 6px 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+.heart{
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* --------section feature--------- */
 .feature {
   display: flex;
@@ -137,9 +206,11 @@
   flex-direction: column;
   gap: 50px;
   margin: 50px auto;
+  margin-top: 150px;
 }
 .blog-title {
   text-align: center;
+  margin-bottom: 40px;
   h3 {
     font-size: 36px;
     margin-bottom: 20px;
