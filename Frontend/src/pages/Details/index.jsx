@@ -7,7 +7,7 @@ function Detail() {
   let { products, setProducts } = useContext(ProductContext)
 
   let { id } = useParams()
-  let prod = products.find(item => item.id == id)
+  let prod = products.find(item => item._id == id)
 
   if (!prod) {
     return <h2 style={{ textAlign: "center", color: "red" }}>Product not found</h2>

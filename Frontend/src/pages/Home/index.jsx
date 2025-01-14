@@ -35,7 +35,7 @@ function Home() {
     async function handleDelete(id) {
         await axios.delete(`http://localhost:3000/products/${id}`)
             .then(res => {
-                let filtered = products.fillter(product => product.id !== id)
+                let filtered = products.filter(product => product._id !== id)
                 setProducts(filtered)
             })
     }
@@ -46,11 +46,11 @@ function Home() {
 
 
     function handleAddWishlist(product) {
-        let findWishlist = wishlist.find(item => item.id === product.id)
+        let findWishlist = wishlist.find(item => item._id === product._id)
         if (findWishlist) {
             alert("Wishlist`ə əlavə olunub")
         } else {
-            setWishlist([...wishlist, product])
+            setWishlist([...wishlist,product])
         }
     }
 
@@ -89,7 +89,7 @@ function Home() {
                     <div className="products contain">
                         {
                             products.map(product => (
-                                <div key={product.id} className="product-card">
+                                <div key={product._id} className="product-card">
                                     <Card className='card-hvr' >
                                         <CardActionArea>
                                             <CardMedia className='card-image'
@@ -110,10 +110,10 @@ function Home() {
                                             </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                            <button onClick={() => handleDetail(product.id)} className='card-btn-detail'>
+                                            <button onClick={() => handleDetail(product._id)} className='card-btn-detail'>
                                                 Detail
                                             </button>
-                                            <button onClick={() => handleDelete(product.id)} className='card-btn-delete'>
+                                            <button onClick={() => handleDelete(product._id)} className='card-btn-delete'>
                                                 Delete
                                             </button>
                                             <IconButton onClick={() => handleAddWishlist(product)}><FavoriteBorderIcon className='heart' /></IconButton>

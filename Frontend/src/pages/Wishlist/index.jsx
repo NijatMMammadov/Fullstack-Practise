@@ -12,12 +12,14 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 function Wishlist() {
 
+    let { wishlist, setWishlist } = useContext(WishlistContext)
+
     function handleDeleteWishlist(id) {
-        let deleteWishlist = wishlist.filter(list => wishlist.id != id)
+        let deleteWishlist = wishlist.filter(list => list._id != id)
         setWishlist(deleteWishlist)
     }
 
-    let { wishlist, setWishlist } = useContext(WishlistContext)
+    
 
     if (!wishlist.length>0) {
         return <h2 style={{ textAlign: "center", color: "red",margin:"200px",fontSize:"32px" }}>Product not found</h2>
@@ -48,7 +50,7 @@ function Wishlist() {
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
-                                    <IconButton onClick={() => handleDeleteWishlist(wishlist.id)}><FavoriteBorderIcon className='heart' /></IconButton>
+                                    <IconButton onClick={() => handleDeleteWishlist(item._id)}><FavoriteBorderIcon className='heart' /></IconButton>
                                 </CardActions>
                             </Card>
                         </div>
